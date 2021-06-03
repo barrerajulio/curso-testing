@@ -73,3 +73,15 @@ como probar clases externas
 como probar mock server
 
 Deuda de confianza a nivel código, deuda de confianza a nivel negocio.
+
+Comprobar que la multiplicación de 2 numeros sea correcta.
+
+Semaforo
+
+1. Rojo: Hacer que la prueba falle
+2. Verde: Hacer que funcione con el código minimo necesario
+3. Morado: Refactorización.
+
+PO -> Casos de uso -> Criterios de aceptación
+
+Criterios de aceptación -> pruebas unitarias -> QA -> Pruebas funcionales -> Criterios de aceptación -> Desarrollo -> Preproducción -> Producción

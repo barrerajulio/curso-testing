@@ -44,4 +44,28 @@ describe("Producto", () => {
     subject.setNombre("as");
     sandbox.assert.notCalled(spy);
   });
+
+  it("Requiero una propiedad que almacene el precio del producto y este precio tiene que ser mayor que cero", () => {
+    const consoleStub = sandbox.stub(console, "log");
+    subject.precio = 0;
+    expect(subject.precio).eq(undefined);
+    sandbox.assert.calledWithExactly(consoleStub, "El precio no es válido");
+  });
+
+  it("Requiero que el valor cuando es mayor que 0 se inicialice en la variable precio", () => {
+    subject.precio = 10;
+    expect(subject.precio).eq(10);
+  });
+
+  it("Requiero saber el total de la compra de 2 elementos del mismo producto", () => {
+    const precioSetSpy = sandbox.spy();
+    const precioGetSpy = sandbox.stub();
+    Object.defineProperty(subject, "precio", {
+      set: precioSetSpy,
+      get: precioGetSpy,
+    });
+    subject.precio = 10;
+    precioGetSpy.returns(10);
+    expect(subject.geTotal(2)).eq(20);
+  });
 });
