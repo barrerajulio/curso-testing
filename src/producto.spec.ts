@@ -36,15 +36,6 @@ describe("Producto", () => {
     sandbox.assert.calledWithExactly(spy, name);
   });
 
-  it("nombre no podría ser inicializado si su valor contiene menos de 3 letras", () => {
-    const spy = sandbox.spy();
-    Object.defineProperty(subject as any, "nombre", {
-      set: spy,
-    });
-    subject.setNombre("as");
-    sandbox.assert.notCalled(spy);
-  });
-
   it("Requiero una propiedad que almacene el precio del producto y este precio tiene que ser mayor que cero", () => {
     const consoleStub = sandbox.stub(console, "log");
     subject.precio = 0;
@@ -67,5 +58,17 @@ describe("Producto", () => {
     subject.precio = 10;
     precioGetSpy.returns(10);
     expect(subject.geTotal(2)).eq(20);
+  });
+
+  it("Cuando el nombre del usuario es menor que 3 letras se debe generar una excepcion", () => {
+    const fakeName = "AH";
+    const spy = sandbox.spy();
+    Object.defineProperty(subject as any, "nombre", {
+      set: spy,
+    });
+    expect(() => subject.setNombre(fakeName)).throws(
+      "Se esperaba un nombre mayor a 3 letras"
+    );
+    sandbox.assert.notCalled(spy);
   });
 });

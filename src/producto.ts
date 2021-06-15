@@ -16,7 +16,7 @@ export class Producto {
 
   public setNombre(nombre: string) {
     if (nombre.length < 3) {
-      return;
+      throw new Error("Se esperaba un nombre mayor a 3 letras");
     }
     this.nombre = nombre;
   }

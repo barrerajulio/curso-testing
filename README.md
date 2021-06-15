@@ -85,3 +85,13 @@ Semaforo
 PO -> Casos de uso -> Criterios de aceptación
 
 Criterios de aceptación -> pruebas unitarias -> QA -> Pruebas funcionales -> Criterios de aceptación -> Desarrollo -> Preproducción -> Producción
+
+- en ocasiones los requerimientos se olvidan y las pruebas son respaldo de que fue una solicitud valida
+- validando que negocio funcione
+- coverage es el valor administrativo, crear software de bajo riesgo es el valor definitivo
+
+- si no hay claridad en el objetivo (experimental) puede ser que pruebas unitarias nos ean requeridas día 0
+
+- dia 0
+- producción
+- inestable
